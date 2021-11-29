@@ -27,6 +27,10 @@ class OrderView(ViewSet):
         return Response(serializer.data)
 
     @swagger_auto_schema(responses={
+        200: openapi.Response(
+            description="The requested store",
+            schema=OrderSerializer()
+        ),
         204: openapi.Response(
             description="No Content"
         ),
